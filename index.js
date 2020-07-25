@@ -1,2 +1,6 @@
 const title = document.getElementById("title");
-title.innerHTML = "Hi! From js"
+const title2 = document.querySelector("#title");
+const title3 = document.querySelector(".title");
+title.style.color = "red";
+document.title = "I own you now";
+console.dir(document)
