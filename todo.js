@@ -6,18 +6,16 @@ const TODOS_LS = "toDos";
 
 let toDos = [];
 
-function filterfn(toDo){
-    if(toDo)
-}
-
 function deleteToDo(event){
     const btn = event.target;
     const li = btn.parentNode;
     toDoList.removeChild(li);
-     const cleanToDos = toDos.filter(function(toDo){
+    const cleanToDos = toDos.filter(function(toDo){
+         console.log(toDo.id, li.id);
          return toDo.id !== parseInt(li.id);
      });
      toDos = cleanToDos;
+     saveToDos();
 }
 
 function saveToDos(){
@@ -34,7 +32,7 @@ function paintToDO(text){
     span.innerText = text;
     li.appendChild(delBtn);
     li.appendChild(span);
-    li.di = newId;
+    li.id = newId;
     toDoList.appendChild(li);
     const toDoObj = {
         text: text,
